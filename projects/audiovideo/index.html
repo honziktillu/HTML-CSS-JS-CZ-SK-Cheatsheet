@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
+    <link href="./res/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="./res/img/logo.png" rel="icon">
+  </head>
+  <body>
+    <video id="videoPlayer" controls poster="./res/img/jogobella.jpg">
+      <source src="./res/videos/Ovoce.mp4" type="video/mp4" />
+    </video>
+    <div class="has-text-centered">
+      <button class="button is-light video-button" id="backButton">
+        <i class="fas fa-undo"></i>
+      </button>
+      <button class="button is-success is-light video-button" id="ppButton">
+        <p id="video-play"><i class="fas fa-play"></i></p>
+        <p id="video-pause"><i class="fas fa-pause"></i></p>
+      </button>
+      <button class="button is-light video-button" id="forwardButton">
+        <i class="fas fa-undo fa-flip-horizontal"></i>
+      </button>
+    </div>
+    <div class="has-text-centered">
+      <button class="button is-light video-button" id="pipButton">
+        <i class="fas fa-tv"></i>
+      </button>
+      <button class="button is-light video-button" id="fullscreenButton">
+        <i class="fas fa-expand"></i>
+      </button>
+      <button class="button is-light video-button" id="muteButton">
+        <i class="fas fa-volume-off"></i>
+      </button>
+    </div>
+    <div class="has-text-centered">
+      <a
+        download
+        href="./res/videos/Ovoce.mp4"
+        class="button is-light video-button"
+        id="downloadButton"
+      >
+        <i class="fas fa-download"></i>
+      </a>
+    </div>
+    <audio id="audioPlayer" controls>
+        <source src="./res/sounds/soundlol.mp3" type="audio/mpeg">
+    </audio>
+    <div class="has-text-centered">
+        <button class="button is-light video-button" id="backButtonAudio">
+          <i class="fas fa-undo"></i>
+        </button>
+        <button class="button is-success is-light video-button" id="ppButtonAudio">
+          <p id="audio-play"><i class="fas fa-play"></i></p>
+          <p id="audio-pause"><i class="fas fa-pause"></i></p>
+        </button>
+        <button class="button is-light video-button" id="forwardButtonAudio">
+          <i class="fas fa-undo fa-flip-horizontal"></i>
+        </button>
+      </div>
+      <div class="has-text-centered">
+        <button class="button is-light video-button" id="muteButtonAudio">
+          <i class="fas fa-volume-off"></i>
+        </button>
+      </div>
+      <div class="has-text-centered">
+        <a
+          download
+          href="./res/sounds/soundlol.mp3"
+          class="button is-light video-button"
+          id="downloadButton"
+        >
+          <i class="fas fa-download"></i>
+        </a>
+      </div>
+    <script src="./res/js/main.js"></script>
+  </body>
+</html>

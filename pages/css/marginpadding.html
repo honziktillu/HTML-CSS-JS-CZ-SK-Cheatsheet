@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS margin, padding, box-sizing</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Struktura elementu</h2>
+            <img src="../../res/img/elementdiagram.png" alt="elementdiagram.png">
+            <h2>margin</h2>
+            <p>Vlastnost, která nastavuje vnější odsazení elementu</p>
+            <h2>padding</h2>
+            <p>Vlastnost, která nastavuje vnitřní odsazení elementu</p>
+            <ul>
+                <li>auto - defaultní hodnota - prohlížeč automaticky vypočítává šířku/výšku</li>
+                <li>length - definování rozměrů pomocí px, cm...</li>
+                <li>% - definování rozměrů pomocí procent</li>
+                <li>inherit - rozměry budou zděděny od rodiče</li>
+            </ul>
+            <p>margin/padding varianty:</p>
+            <ul>
+                <li>margin - nastavení vnějšího odsazení pro všechny strany</li>
+                <li>margin-left - nastavení vnějšího odsazení pro levou stranu</li>
+                <li>margin-top - nastavení vnějšího odsazení pro horní stranu</li>
+                <li>margin-right - nastavení vnějšího odsazení pro pravou stranu</li>
+                <li>margin-bottom - nastavení vnějšího odsazení pro dolní stranu</li>
+                <li>padding - nastavení vnitřního odsazení pro všechny strany</li>
+                <li>padding-left - nastavení vnitřního odsazení pro levou stranu</li>
+                <li>padding-top - nastavení vnitřního odsazení pro horní stranu</li>
+                <li>padding-right - nastavení vnitřního odsazení pro pravou stranu</li>
+                <li>padding-bottom - nastavení vnitřního odsazení pro dolní stranu</li>
+            </ul>
+            <h2>box-sizing</h2>
+            <p>Vlastnost box-sizing definuje jak bude šířka a výška elementu vypočítávána - jestli se bude do šířky a výšky počítat i okraj a vnitřní odsazení či nikoliv</p>
+            <p>box-sizing hodnoty:</p>
+            <ul>
+                <li>content-box - defaultní hodnota - šířka a výška se počítá jen s obsahem elementu</li>
+                <li>padding-box - šířka a výška zahrnuje obsah a padding</li>
+                <li>border-box - šířka a výška zahrnuje obsah, padding a border</li>
+            </ul>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            #div1 {
+                box-sizing: content-box;
+                padding: 2em;
+                border: 15px solid black;
+                background-color: red;
+                width: 200px;
+            }
+            #div2 {
+                box-sizing: border-box;
+                padding: 2em;
+                border: 15px solid black;
+                background-color: red;
+                width: 200px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;div1&quot;&gt;content-box&lt;/div&gt;
+        &lt;p&gt;Sirka obsahu je 200px&lt;/p&gt;
+        &lt;div id=&quot;div2&quot;&gt;border-box&lt;/div&gt;
+        &lt;p&gt;Sirka celeho elementu je 200px&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

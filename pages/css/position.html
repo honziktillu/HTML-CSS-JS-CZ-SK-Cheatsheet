@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS position</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>position</h2>
+            <p>Vlastnost position specifikuje jak daný element bude pozicován</p>
+            <p>Může nabývat několika hodnot:</p>
+            <ul>
+                <li>static - defaultní hodnota - element se vyrenderuje v normálním pořadí podle toku dokumentu</li>
+                <li>absolute - element je relativně pozicován k prvnímu předešlému non-static elementu</li>
+                <li>fixed - element je relativně pozicován k oknu prohlížeče</li>
+                <li>relative - element je relativě pozicován k normální pozici</li>
+                <li>sticky - element je pozicován podle uživatelského scrollování - přepíná mezi hodnotou relative a fixed podle scroll pozice</li>
+                <li>intial - nastaví position na defaultní hodnotu</li>
+                <li>inherit - zdědí hodnotu od rodičovského elementu</li>
+            </ul>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            body {
+                height: 200vh;
+            }
+            .div1 {
+                width: 200px;
+                height: 600px;
+                position: relative;
+                border: 1px solid black;
+            }
+            .div2 {
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                bottom: 0;
+                border: 1px solid red;
+            }
+            .div3 {
+                width: 200px;
+                height: 200px;
+                position: fixed;
+                bottom: 0;
+                border: 1px solid green;
+            }
+            .div4 {
+                width: 200px;
+                height: 200px;
+                position: sticky;
+                top: 150px;
+                left: 400px;
+                border: 1px solid red;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;div1&quot;&gt;
+            relative
+            &lt;div class=&quot;div2&quot;&gt;
+                absolute
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;div3&quot;&gt;
+            fixed
+        &lt;/div&gt;
+        &lt;div class=&quot;div4&quot;&gt;
+            sticky
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

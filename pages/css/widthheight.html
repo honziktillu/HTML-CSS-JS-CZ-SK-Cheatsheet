@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS width, height</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>width</h2>
+            <p>Slouží pro nastavení šírky elementu</p>
+            <h2>height</h2>
+            <p>Slouží pro nastavení výšky elementu</p>
+            <h2>width/height hodnoty</h2>
+            <ul>
+                <li>auto - defaultní hodnota - prohlížeč automaticky vypočítává šířku/výšku</li>
+                <li>length - definování rozměrů pomocí px, cm...</li>
+                <li>% - definování rozměrů pomocí procent</li>
+                <li>inherit - rozměry budou zděděny od rodiče</li>
+            </ul>
+            <h2>width/height varianty</h2>
+            <ul>
+                <li>height - nastaví výšku elementu</li>
+                <li>max-height - nastaví maximální výšku elementu</li>
+                <li>min-height - nastaví minimální výšku elementu</li>
+                <li>width - nastaví šířku elementu</li>
+                <li>max-width - nastaví maximální šířku elementu</li>
+                <li>min-width - nastaví minimální šířku elementu</li>
+            </ul>
+            <p>Pro dobrou responzivitu se často například nastavuje maximální šířka na určité pixely a šířka elementu se nastaví na 100%</p>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            div {
+                max-width: 980px;
+                width: 100%;
+                height: 50px;
+                background: red;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

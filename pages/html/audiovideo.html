@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagy audio, video</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>&lt;video&gt;</h2>
+            <p>Slouží k vytvoření elementu pro video soubor</p>
+            <h2>&lt;audio&gt;</h2>
+            <p>Slouží k vytvoření elementu pro audio soubor</p>
+            <h2>&lt;audio&gt;/&lt;video&gt; atributy</h2>
+            <ul>
+                <li>controls - přidává ovládání k media elementu - tlačítka pro spuštění, vypnutí, hlasitost, stažení...</li>
+                <li>muted - ztlumí zvuk pro media element</li>
+                <li>autoplay - spustí automaticky media element - od novějších verzí prohlížečů musí být doprovázen atributem muted bez kterého se jinak media automaticky nespustí</li>
+                <li>poster - náhledový obrázek pro video</li>
+            </ul>
+            <h2>&lt;source&gt;</h2>
+            <p>Slouží k specifikaci media zdrojů pro různé media elementy - audio, video, picture</p>
+            <p>Zároveň slouží k specifikování alternativních souborových zdrojů pro dané medium - pokud se prohlížeči nepodaří načíst hlavní zdroj z různých důvodů, vybere alternativní zdroj pro dané medium (například vybere jiný souborový formát)</p>
+            <h2>&lt;source&gt; atributy</h2>
+            <ul>
+                <li>type - specifikuje MIME-type pro daný zdroj - audio/mpeg, video/mp4...</li>
+                <li>src - specifikuje URL pro dané medium</li>
+            </ul>
+            <h2>Example</h2>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;video muted autoplay controls&gt;
+            &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+            &lt;source src=&quot;video.ogg&quot; type=&quot;video/ogg&quot;&gt;
+        &lt;/video&gt;
+        &lt;audio controls&gt;
+            &lt;source src=&quot;audio.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+            &lt;source src=&quot;audio.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+         &lt;/audio&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Project - projects/audiovideo <button id="play" class="button is-light is-success" style="display: none;">Run</button></h2>
+            <iframe src="../../projects/audiovideo/index.html" id="code"></iframe>
+            <h2>JavaScript</h2>
+            <div class="code-sample" data-type="javascript">const videoPlayer = document.getElementById("videoPlayer");
+const ppButton = document.getElementById("ppButton");
+const videoPlay = document.getElementById("video-play");
+const videoPause = document.getElementById("video-pause");
+const forwardButton = document.getElementById("forwardButton");
+const backButton = document.getElementById("backButton");
+const fullscreenButton = document.getElementById("fullscreenButton");
+const muteButton = document.getElementById("muteButton");
+const pipButton = document.getElementById("pipButton");
+const changeValue = 5;
+                
+ppButton.onclick = () => {
+    // vlastnost paused - vraci jestli je medium pozastaveno
+    if (videoPlayer.paused) {
+        showPause();
+        // funkce play() - spousti medium
+        videoPlayer.play();
+        return;
+    }
+    showPlay();
+    // funkce pause() - pozastavuje medium
+    videoPlayer.pause();
+};
+                
+backButton.onclick = () => {
+    // vlastnost currentTime - vraci soucasnou stopu v sekundach
+    videoPlayer.currentTime -= changeValue;
+};
+                
+forwardButton.onclick = () => {
+    videoPlayer.currentTime += changeValue;
+};
+                
+fullscreenButton.onclick = () => {
+    // funkce requestFullscreen() - hodi video do fullscreenu
+    videoPlayer.requestFullscreen();
+};
+                
+muteButton.onclick = () => {
+    // vlastnost volume - vraci hodnotu hlasitosti pro medium - 0 je muted (0%), 1 je nejvyssi hlasitost (100%)
+    if (videoPlayer.volume === 0) {
+        videoPlayer.volume = 1;
+        return;
+    }
+    videoPlayer.volume = 0;
+};
+  
+// PIP - picture in picture - male video okenko, ktere jde vypichnout z nasi stranky a nasledne ruzne umistit po nasi plose 
+pipButton.onclick = () => {
+    // vlastnost pictureInPictureElement - vraci jestli je dokument v PIP modu
+    if (document.pictureInPictureElement) {
+        // funkce exitPictureInPicture() - ukoncuje PIP mod
+        document.exitPictureInPicture();
+        return;
+    }
+    // funkce requestPictureInPicture() - hodi video do PIP modu
+    videoPlayer.requestPictureInPicture();
+};
+                
+const showPlay = () => {
+    videoPlay.style.display = "block";
+    videoPause.style.display = "none";
+};
+                
+const showPause = () => {
+    videoPlay.style.display = "none";
+    videoPause.style.display = "block";
+};
+
+// pro audio plati stejne funkce, jen nektere od videa postrada (nejsou z logiky veci potreba)
+
+const audioPlayer = document.getElementById("audioPlayer");
+const muteButtonAudio = document.getElementById("muteButtonAudio");
+const backButtonAudio = document.getElementById("backButtonAudio");
+const forwardButtonAudio = document.getElementById("forwardButtonAudio");
+const audioPlay = document.getElementById("audio-play");
+const audioPause = document.getElementById("audio-pause");
+const ppButtonAudio = document.getElementById("ppButtonAudio");
+                
+ppButtonAudio.onclick = () => {
+    if (audioPlayer.paused) {
+        showAudioPause();
+        audioPlayer.play();
+        return;
+    }
+    showAudioPlay();
+    audioPlayer.pause();
+};
+muteButtonAudio.onclick = () => {
+    if (audioPlayer.volume === 0) {
+        audioPlayer.volume = 1;
+        return;
+    }
+    audioPlayer.volume = 0;
+};
+                
+backButtonAudio.onclick = () => {
+    audioPlayer.currentTime -= changeValue;
+};
+                
+forwardButtonAudio.onclick = () => {
+    audioPlayer.currentTime += changeValue;
+};
+                
+const showAudioPlay = () => {
+    audioPlay.style.display = "block";
+    audioPause.style.display = "none";
+};
+                
+const showAudioPause = () => {
+    audioPlay.style.display = "none";
+    audioPause.style.display = "block";
+};</div>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

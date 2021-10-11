@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brain.js</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <p><a href="https://brain.js.org/#/" target="_blank">brain.js.org/#/</a></p>
+            <p><a href="../../projects/brainjsxor/index.html">projects/brainjsxor</a></p>
+            <h2>projects/brainjscolors</h2>
+            <h2>HTML</h2>
+            <div class="code-sample" data-type="html">
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang=&quot;en&quot;&gt;
+
+                &lt;head&gt;
+                    &lt;meta charset=&quot;UTF-8&quot;&gt;
+                    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                    &lt;title&gt;Document&lt;/title&gt;
+                    &lt;script src=&quot;//unpkg.com/brain.js&quot;&gt;&lt;/script&gt;
+                    &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+                    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot;&gt;
+                    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+                &lt;/head&gt;
+
+                &lt;body&gt;
+                    &lt;div class=&quot;wrapper&quot;&gt;
+                        &lt;p id=&quot;text&quot;&gt;Hello World!&lt;/p&gt;
+                        &lt;div id=&quot;netPic&quot;&gt;&lt;/div&gt;
+                        &lt;button id=&quot;run&quot;&gt;RUN&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+                &lt;/body&gt;
+
+                &lt;/html&gt;</div>
+            <h2>CSS</h2>
+            <div class="code-sample" data-type="css">
+                body {
+                    overflow: hidden;
+                }
+                
+                .wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100vh;
+                }
+                
+                p {
+                    font-size: 28px;
+                    font-family: 'Roboto', sans-serif;
+                }</div>
+            <h2>JavaScript</h2>
+            <div class="code-sample" data-type="javascript">
+                const net = new brain.NeuralNetwork();
+                const data = [
+                    {
+                        input: { r: 0, g: 0, b: 0},
+                        output: [1]
+                    },
+                    {
+                        input: { r: 1, g: 1, b: 1},
+                        output: [0]
+                    }
+                ];
+
+                // 0 - black, 1 - white
+                net.train(data);
+
+                const netPic = document.getElementById('netPic');
+                netPic.innerHTML = brain.utilities.toSVG(net);
+
+                console.log(net.run({r: 1, g: 0, b: 1}));
+
+                let color;
+                const text = document.getElementById('text');
+                const run = document.getElementById('run');
+                const generate = () => {
+                    color = {
+                        r: Math.random(),
+                        g: Math.random(),
+                        b: Math.random()
+                    };
+                    const textColor = net.run(color)[0];
+                    text.style.color = textColor > .5 ? 'white' : 'black';
+                    document.body.style.backgroundColor = `rgb(${color.r * 255}, ${color.g * 255}, ${color.b * 255})`;
+                };
+                run.onclick = generate;</div>
+            <h2 class="hidden">Editor</h2>
+            <p class="hidden">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div class="hidden" id="editor"></div>
+            <h2>Page<button id="play" class="button is-light is-success hidden">Run</button></h2>
+            <iframe id="code" src="../../projects/brainjscolors/index.html"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+    integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+    <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

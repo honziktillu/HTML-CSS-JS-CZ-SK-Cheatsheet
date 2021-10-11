@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>JavaScript</h2>
+            <p>JavaScript je scriptovací jazyk pro webové technologie. Můžeme v něm dělat jak scripty na straně klienta, tak psát v něm logiku serveru (NodeJS)</p>
+            <p>Patří k nejpopulárnějším jazykům světa (Stackoverflow survey 2020 - JavaScript 67% - 1. místo, PHP 26% - 8. místo)</p>
+            <h2>Hello World</h2>
+            <p>JavaScript se dá psát do tagu <strong>&lt;script&gt;&lt;/script&gt;</strong></p>
+            <p>Tento tag se většinou píše buď do tagu <strong>head</strong> nebo před koncový tag <strong>body</strong></p>
+            <p>Pro lepší správu se scripty oddělují do separátních souborů většinou s koncovkou .js</p>
+            <p>Následně se na tyto scripty odkazuje pomocí &lt;script src="/cesta/k/souboru/soubor.js"&gt;&lt;/script&gt;</p>
+            <p>První věcí co se učí v JavaScriptu je funkce <strong>console.log();</strong> - výpis do konzole (tu najdete v DevTools - např. Chrome - F12 - Console)</p>
+            <h2 class="">Editor</h2>
+            <p class="">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor" class="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;script&gt;
+        console.log("Hello World");
+    &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+        </section> 
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

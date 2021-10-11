@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagy form, input, option, label, textarea, select</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>&lt;form&gt;</h2>
+            <p>Slouží pro vytvoření formuláře</p>
+            <h2>&lt;form&gt; atributy</h2>
+            <ul>
+                <li>action - specifikuje kam budou data z formuláře odeslána - URL</li>
+                <li>method - specifikuje, která HTTP metoda bude použita při odesílání dat - GET, POST</li>
+                <li>name - specifikuje jméno formuláře</li>
+                <li>autocomplete - specifikuje, jestli formulář bude poskytovat automatické vyplňování - on/off</li>
+                <li>enctype - specifikuje jak budou data z formuláře enkódována při posílání na server - platí jen pro POST</li>
+            </ul>
+            <h2>&lt;input&gt;</h2>
+            <p>Slouží pro vytvoření jednořádkového pole ve kterém uživatel může zadat svoje údaje</p>
+            <h2>&lt;input&gt; atributy</h2>
+            <ul>
+                <li>type - specifikuje typ vstupního pole - text, button, checkbox, date, email, file, hidden, image, number, password, submit...</li>
+                <li>autocomplete - specifikuje, jestli input bude poskytovat automatické vyplňování - on/off</li>
+                <li>autofocus - specifikuje, jestli input automaticky zvýrazněn po načtení stránky</li>
+                <li>form - specifikuje k jakému formuláři input náleží</li>
+                <li>maxlength - specifikuje maximální počet znaků</li>
+                <li>minlength - specifikuje minimální počet znaků</li>
+                <li>value - specifikuje hodnotu, kterou bude input obsahovat</li>
+                <li>name - specifikuje jméno inputu</li>
+                <li>required - specifikuje, že input musí být vyplněn před odesláním</li>
+                <li>placeholder - specifikuje text nápovědy v pozadí inputu</li>
+            </ul>
+            <h2>&lt;select&gt;</h2>
+            <p>Slouží pro vytvoření rozevírajícího seznamu (drop-down list)</p>
+            <h2>&lt;option&gt;</h2>
+            <p>Slouží pro vytvoření položky v drop-down seznamu</p>
+            <h2>&lt;label&gt;</h2>
+            <p>Slouží pro vytvoření jmenovky pro elementy typu input</p>
+            <h2>&lt;textarea&gt;</h2>
+            <p>Slouží pro vytvoření vícerořádkového vstupního pole ve kterém uživatel může zadat svoje údaje</p>
+            <h2>&lt;textarea&gt; atributy</h2>
+            <ul>
+                <li>name - specifikuje jméno elementu textarea</li>
+                <li>placeholder - specifikuje text nápovědy v pozadí elementu textarea</li>
+                <li>required - specifikuje, že element textarea musí být vyplněn před odesláním</li>
+                <li>maxlength - specifikuje maximální počet znaků</li>
+            </ul>
+            <h2>Editor</h2>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form action=&quot;&quot; method=&quot;POST&quot;&gt;
+            &lt;label for=&quot;jmeno&quot;&gt;Jm&eacute;no:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;jmeno&quot; name=&quot;jmeno&quot;&gt;
+            &lt;label for=&quot;prijmeni&quot;&gt;Př&iacute;jmen&iacute;:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;prijmeni&quot; name=&quot;prijmeni&quot;&gt;
+            &lt;select&gt;
+                &lt;option value=&quot;radegast&quot;&gt;Radegast&lt;/option&gt;
+                &lt;option value=&quot;plzeň&quot;&gt;Plzeň&lt;/option&gt;
+                &lt;option value=&quot;kru&scaron;ovice&quot;&gt;Kru&scaron;ovice&lt;/option&gt;
+                &lt;option value=&quot;kozel&quot;&gt;Kozel&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;textarea name=&quot;info&quot; placeholder=&quot;Zadejte v&aacute;&scaron; dotaz&quot;&gt;&lt;/textarea&gt;
+            &lt;input type=&quot;submit&quot; name=&quot;submit&quot;&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

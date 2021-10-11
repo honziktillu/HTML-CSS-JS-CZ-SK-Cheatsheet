@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS if, switch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>if</h2>
+            <p>Někdy je potřeba provést různé odlišné akce pro nějakou věc. Proto nám slouží if, který nám dokáže náš program větvit</p>
+            <p>Syntax:</p>
+            <div class="code-sample" data-type="javascript">if (podmínka) {
+    // kód
+}</div>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">if (true) {
+    console.log('Hello World');
+}</div>
+            <h2>else if</h2>
+            <p>Jenže co když naše podmínka nebude pravdivá? K tomu nám slouží else if, který otestuje jinou podmínku</p>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">let i = 5;                
+if (i === 4) {
+    console.log('Číslo se rovná 4');
+} else if (i === 5) {
+    console.log('Číslo se rovná 5');
+}</div>
+            <h2>else</h2>
+            <p>Co když nebude platit žádná z podmínek? K tomu tu pro změnu máme else, který se provede, když žádná jiná podmínka není pravdivá</p>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">let i = 6;                
+if (i === 4) {
+    console.log('Číslo se rovná 4');
+} else if (i === 5) {
+    console.log('Číslo se rovná 5');
+} else {
+    console.log('Číslo není rovno 4 ani 5');
+}</div>
+            <h2>Ternární operátor</h2>
+            <p>Ternární operátor se dá použít jako zkratka pro if</p>
+            <p>Syntax:</p>
+            <div class="code-sample" data-type="javascript">podmínka ? kódCoSeProvedePokudJePravdivá : kódCoseProvedePokudNeníPravdivá</div>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">let age = 20;
+let beverage = (age >= 18) ? "Kozel" : "Birell";
+console.log({beverage});</div>
+            <h2>switch</h2>
+            <p>switch je náhražka pro velké množštví ifů</p>
+            <p>Ošetřuje případy, kterých může nějaká proměnná nabývat</p>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">let color = "red";
+switch (color) {
+    case "red":
+        console.log("Barva je nastavená na hodnotu red");
+        break;
+    case "green":
+        console.log("Barva je nastavená na hodnotu green");
+        break;
+    case "blue":
+        console.log("Barva je nastavená na hodnotu blue");
+        break;
+    default:
+        console.log("Tuhle barvu neznám");
+}</div>
+            <ul>
+                <li>switch (color) - switch bere v () název proměnné pro kterou ošetřuje případy</li>
+                <li>case "red" - případ kde se proměnná color rovná hodnotě "red"</li>
+                <li>default - pokud z žádných případů se neprovede, tak nastane kód co je napsaný v sekci default</li>
+            </ul>
+            <h2 class="">Editor</h2>
+            <p class="">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor" class="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let age = 20;
+        let beverage = (age >= 18) ? "Kozel" : "Birell";
+        console.log({beverage});
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

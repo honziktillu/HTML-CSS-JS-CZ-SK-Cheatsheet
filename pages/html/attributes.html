@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag atributy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Atributy</h2>
+            <p>Všechny HTML elementy mohou mít atributy</p>
+            <p>Atributy poskytují informace o elementech a jsou vždy v otevírajícím tagu</p>
+            <p>Většinou jsou ve formátu jmenoatributu="hodnota"</p>
+            <h2>Základní atributy</h2>
+            <ul>
+                <li>href - specifikuje URL na kterou daný element odkazuje - tagy a, base, link...</li>
+                <li>src - specifikuje URL pro externí zdroj - tagy img, audio, video, source, input, iframe...</li>
+                <li>alt - specifikuje alternativní text pro obrázek v případě, že by se obrázek nenačetl - tag img</li>
+                <li>style - slouží pro přidání CSS stylů pro element</li>
+                <li>lang - deklaruje jazyk webové stránky</li>
+                <li>title - dodatečné informace pro element - zobrazí se jako popisek po najetí kurzoru na nějaký element</li>
+                <li>id - specifikuje unikátní identifikátor pro HTML element - syntax id="hodnota"</li>
+                <li>class - specifikuje třídu pro HTML element, tato třída se využívá často pro selektory v CSS či odkazování v JavaScriptu - syntax class="trida1 trida2 trida3"</li>
+                <li>dataset - slouží pro ukládání vlastních hodnot - syntax: data-nasvybranynazev="hodnota" - v JavaScriptu se odkazuje na naší hodnotu ve stylu element.dataset.nasvybranynazev</li>
+            </ul>
+            <div id="editor" style="display: none;">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 style="display: none;">Page<button id="play" class="button is-light is-success" style="display: none;">Run</button></h2>
+            <iframe id="code" style="display: none;"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

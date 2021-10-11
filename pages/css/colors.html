@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS barvy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Barva</h2>
+            <p>Barvu můžeme zapisovat několika způsoby:</p>
+            <ul>
+                <li>názvem - napíšeme název barvy - black, yellow, green, blue...</li>
+                <li>rgb - pomocí rgb modelu, který se dělí na tři části - RedGreenBlue. Tyto části obsahují čísla z rozmezí 0-255 kde 0 reprezentuje černou a 255 reprezentuje bílou - např. rgb(69, 69, 69)</li>
+                <li>rgba - v zápisu rgba přidáváme k barvě ještě průhlednost, která je v rozmezí 0-1 - např. rgba(255, 60, 5, 0.5)</li>
+                <li>hex - zápis v šestnáctkové soustavě - #rrggbb. Část rr slouží pro zápis červené části, gg slouží pro zápis zelené část, bb slouží pro zápis modré část - např. #88b700</li>
+                <li>hsl - zápis ve stylu hsl(barevný tón, sytost, světlost) - např. hsl(81, 68%, 40%)</li>
+                <li>hsla - v zápisu hsla přidáváme k barvě ještě průhlednost, která je v rozemzí 0-1 - např. např. hsl(81, 68%, 40%, 0.6)</li>
+            </ul>
+            <p>Barvu můžeme nastavovat několika vlastnostem:</p>
+            <ul>
+                <li>color - barva textu - např. color: red;</li>
+                <li>background-color - barva pozadí - např. background-color: rgba(255, 120, 6, 0.4);</li>
+                <li>border - barva pro okraj elementu - border: 5px solid rgb(123, 32, 21);</li>
+            </ul>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            div {
+                max-width: 980px;
+                width: 100%;
+                height: 50px;
+                background-color: rgba(255, 120, 6, 0.4);
+                border: 5px solid rgb(123, 32, 21);
+            }
+            p {
+                color: red;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;p&gt;Ahoj svete&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

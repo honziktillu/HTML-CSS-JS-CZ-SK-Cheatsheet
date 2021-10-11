@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>CSS - Cascading Style Sheets</h2>
+            <p>Popisuje jak budou HTML elementy vizuálně zobrazeny na stránce</p>
+            <p>Tyto zápisy se můžou psát do tagu &lt;style&gt;, který se píše do tagu &lt;head&gt;</p>
+            <p>Upřednostněný způsob zápisu je do externího souboru s koncovkou .css (popřípadě jiné možné varianty)</p>
+            <p>Pro zápis nějakého CSS pravidla platí následující syntax:</p>
+            <img src="../../res/img/cssdiagram.png" alt="cssdiagram.png">
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            p {
+                color: red;
+            }
+        &lt;/style&gt;
+        &lt;!-- Propojeni externiho souboru - href odkazuje na URL k souboru --&gt;
+        &lt;link href=&quot;../cesta/k/css/souboru/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Ahoj svete&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

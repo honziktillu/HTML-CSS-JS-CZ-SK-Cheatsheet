@@ -1,0 +1,16 @@
+body {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+p {
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+}

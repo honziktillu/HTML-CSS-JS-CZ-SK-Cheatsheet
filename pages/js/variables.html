@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS proměnné</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Proměnné</h2>
+            <p>Proměnná slouží jako úložiště pro naše informace při běhu programu</p>
+            <p>Pro deklaraci proměnné v JavaScriptu používáme slovíčko <strong>let</strong></p>
+            <p>Syntax: let nazevPromenne;</p>
+            <p>Následně pro vložení dat do naší proměnné používáme operátor <strong>=</strong></p>
+            <p>Syntax: let greeting = "Hello World";</p>
+            <p>nebo</p>
+            <p>Syntax: let greeting;</p>
+            <p>greeting = "Hello World";</p>
+            <p>Ve starších scriptech lze také najít deklaraci pomocí slovíčka <strong>var</strong></p>
+            <p><strong>var</strong> funguje skoro stejně jako <strong>let</strong>. Také slouží pro deklaraci proměnné, ale má spoustu nevýhod z dob minulých. Proto se v moderním JavaScriptu už <span style="text-decoration: underline;">nepoužívá</span>.</p>
+            <h2>Pojmenování</h2>
+            <p>Jména proměnných musí obsahovat pouze písmena, čísla nebo symboly $ a _</p>
+            <p>První znak nesmí být číslo</p>
+            <p>Dobrou konvencí pro zápis jména je takzvaný "camelCase", kde každé další slovo v názvu navazuje velkým písmenem.</p>
+            <p>Např. let myVariable = 1;</p>
+            <p>Nadále pro zápis proměnných (a nějak tak všeho v programování/scriptování) se využívá anglický jazyk - vyvarovat se věcem typu: let příjmení = "Novák";</p>
+            <p>Samozřejmě pro začátečníka může jeho rodný jazyk v kódu ze začátku sloužit pro lepší orientaci</p>
+            <h2>const</h2>
+            <p>Pro vytvoření konstanty (proměnná, která se pak nebude měnit) používáme slovíčko <strong>const</strong></p>
+            <h2 class="">Editor</h2>
+            <p class="">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor" class="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let myName = "Jan";
+        let myAge = 20;
+        const COLOR_BLUE = "#00F";
+        console.log({myName});
+        console.log({myAge});
+        console.log({COLOR_BLUE});
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+            <h2>Datové typy</h2>
+            <ul>
+                <li>let age = 20; - Number (číslo)</li>
+                <li>let name = 'Jan'; - String (řetězec)</li>
+                <li>let person = {name: 'Jan', age: '20'}; - Object (objekt)</li>
+                <li>let truth = true; - Boolean (pravdivostní hodnota)</li>
+                <li>let numbers = [0, 1, 2, 3]; - Array (pole)</li>
+                <li>let t; typeof t; - undefined</li>
+                <li>let t = null; - null</li>
+            </ul>
+            <img src="../../res/img/nullundefined.png" alt="nullundefined.png">
+            <h2>Řetězce</h2>
+            <p>Pro vytvoření řetězce v JavaScriptu můžeme použít uvozovky "", '' a ``</p>
+            <p>Syntax: let name = "Jan";</p>
+            <p>Syntax: let name = 'Jan';</p>
+            <p>Syntax: let name = `Jan`;</p>
+            <p>Pro spojení hodnot v JavaScriptu slouží operátor +</p>
+            <p>Příklad: let name = "Jan";</p>
+            <p>let sentence = "Tvoje jméno je " + name;</p>
+            <p>Tenhle syntax lze zapsat ještě tímto způsobem:</p>
+            <p>let sentence = `Tvoje jméno je ${name}`; // zpětné uvozovky a ${nazevPromenne} syntax</p>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

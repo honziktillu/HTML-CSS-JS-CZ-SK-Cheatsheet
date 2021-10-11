@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tensorflow</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <p><a href="https://www.tensorflow.org/js/models" target="_blank">tensorflow.org/js/models</a></p>
+            <p><a href="../../projects/object detection/index.html">projects/object detection</a></p>
+            <h2>projects/image classification</h2>
+            <h2>HTML</h2>
+            <div class="code-sample" data-type="html">
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang=&quot;en&quot;&gt;
+                
+                &lt;head&gt;
+                    &lt;meta charset=&quot;UTF-8&quot;&gt;
+                    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                    &lt;title&gt;Image classification&lt;/title&gt;
+                    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot;&gt;
+                    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+                    &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+                    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css&quot;&gt;
+                    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1&quot;&gt; &lt;/script&gt;
+                    &lt;!-- Load the MobileNet model. --&gt;
+                    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0&quot;&gt; &lt;/script&gt;
+                &lt;/head&gt;
+                
+                &lt;body&gt;
+                    &lt;div class=&quot;wrapper&quot;&gt;
+                        &lt;img id=&quot;img&quot;&gt;
+                        &lt;input id=&quot;input&quot; class=&quot;input&quot;&gt;
+                        &lt;div class=&quot;has-text-centered&quot;&gt;
+                            &lt;button id=&quot;button&quot; class=&quot;button is-light is-success&quot;&gt;Predict&lt;/button&gt;
+                            &lt;p id=&quot;predictions&quot;&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+                &lt;/body&gt;
+                
+                &lt;/html&gt;</div>
+            <h2>CSS</h2>
+            <div class="code-sample" data-type="css">
+                * {
+                    box-sizing: border-box;
+                }
+                
+                .wrapper {
+                    max-width: 320px;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+                
+                #button {
+                    margin-top: 1em;
+                    margin-bottom: 1em;
+                }</div>
+            <h2>JavaScript</h2>
+            <div class="code-sample" data-type="javascript">
+                const img = document.getElementById('img');
+                const button = document.getElementById('button');
+                const input = document.getElementById('input');
+                const predictionsP = document.getElementById('predictions');
+                
+                button.onclick = () => {
+                    img.src = `./img/${input.value}`; 
+                    mobilenet.load().then(model => {
+                        model.classify(img).then(predictions => {
+                            console.log({predictions});
+                            predictionsP.innerHTML = "";
+                            predictions.forEach(element => {
+                                predictionsP.innerHTML += `<p>ClassName: ${element.className}, probability: ${element.probability}</p>`;
+                            });
+                        });
+                    })
+                }</div>
+            <h2>Dostupné obrázky v projektu</h2>    
+            <p>test1.jpg | test2.png | test3.jpg</p>    
+            <h2 class="hidden">Editor</h2>
+            <p class="hidden">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div class="hidden" id="editor"></div>
+            <h2>Page<button id="play" class="button is-light is-success hidden">Run</button></h2>
+            <iframe id="code" src="../../projects/image classification/index.html"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+    integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+    <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

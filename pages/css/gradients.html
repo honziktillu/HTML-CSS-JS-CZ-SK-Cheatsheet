@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS gradienty</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Gradienty</h2>
+            <p>Gradienty slouží pro vytvoření pozadí s jemným barevným přechodem, který se skladá ze dvou a více barev</p>
+            <p>V CSS lze definovat dva druhy gradientů:</p>
+            <ul>
+                <li>Lineární</li>
+                <li>Radiální</li>
+            </ul>
+            <h2>Lineární</h2>
+            <p>Pro vytvoření lineárního gradientu se musí definovat nejméně dva barvové záznamy popřípadě směr gradientu</p>
+            <p>Syntax: linear-gradient(směr, záznam1, záznam2...)</p>
+            <p>Syntax: linear-gradient(záznam1, záznam2...)</p>
+            <h2>Radiální (elipsovitý, kruhový)</h2>
+            <p>Radiální gradient je definován středem. Pro vytvoření radiálního gradientu zase musíme definovat nejméně dva barvové záznamy</p>
+            <p>Syntax: radial-gradient(záznam1, záznam2...)</p>
+            <p>Syntax: radial-gradient(rozměr, záznam1, záznam2...)</p>
+            <p>Gradienty mohou obsahovat i prefix "repeating-" pro opakování</p>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            #div1 {
+                width: 400px;
+                height: 400px;
+                background-image: linear-gradient(to right, red , yellow);
+            }
+            #div2 {
+                width: 400px;
+                height: 400px;
+                background-image: radial-gradient(farthest-side at 60% 55%, red , yellow);
+            }
+            #div3 {
+                width: 400px;
+                height: 400px;
+                background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+            }
+            #div4 {
+                width: 400px;
+                height: 400px;
+                background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;div3&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;div4&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

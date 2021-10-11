@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS filter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>filter</h2>
+            <p>Vlastnost filter poskytuje visuální efekty jako např. rozmazání a nasycení pro element - většinou obrázky</p>
+            <p>filter hodnoty:</p>
+            <ul>
+                <li>blur(px) - rozmazání</li>
+                <li>brightness(%) - upravuje jas obrázku</li>
+                <li>contrast(%) - upravuje kontrast obrázku</li>
+                <li>drop-shadow(h-shadow v-shadow blur spread color) - aplikuje drop shadow efekt na obrázek</li>
+                <li>grayscale(%) - aplikuje šedo bílý filtr na obrázek</li>
+                <li>hue-rotate(deg) - upravuje odstíny obrázku</li>
+                <li>invert(%) - invertuje obrázek</li>
+                <li>opacity(%) - aplikuje průhlednost pro obrázek</li>
+                <li>saturate(%) - nasycení pro obrázek</li>
+                <li>sepia(%) - aplikuje sepia efekt</li>
+                <li>url() - URL na XML soubor, který specifikuje SVG filter</li>
+            </ul>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            img {
+                filter: blur(5px);
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;img src=&quot;../../res/img/icon.png&quot; alt=&quot;icon.png&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

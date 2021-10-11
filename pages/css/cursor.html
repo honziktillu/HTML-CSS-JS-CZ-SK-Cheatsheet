@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS cursor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>cursor</h2>
+            <p>Vlastnost cursor mění vzhled kurzoru</p>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+        .alias {cursor: alias;}
+        .all-scroll {cursor: all-scroll;}
+        .auto {cursor: auto;}
+        .cell {cursor: cell;}
+        .context-menu {cursor: context-menu;}
+        .col-resize {cursor: col-resize;}
+        .copy {cursor: copy;}
+        .crosshair {cursor: crosshair;}
+        .default {cursor: default;}
+        .e-resize {cursor: e-resize;}
+        .ew-resize {cursor: ew-resize;}
+        .grab {cursor: -webkit-grab; cursor: grab;}
+        .grabbing {cursor: -webkit-grabbing; cursor: grabbing;}
+        .help {cursor: help;}
+        .move {cursor: move;}
+        .n-resize {cursor: n-resize;}
+        .ne-resize {cursor: ne-resize;}
+        .nesw-resize {cursor: nesw-resize;}
+        .ns-resize {cursor: ns-resize;}
+        .nw-resize {cursor: nw-resize;}
+        .nwse-resize {cursor: nwse-resize;}
+        .no-drop {cursor: no-drop;}
+        .none {cursor: none;}
+        .not-allowed {cursor: not-allowed;}
+        .pointer {cursor: pointer;}
+        .progress {cursor: progress;}
+        .row-resize {cursor: row-resize;}
+        .s-resize {cursor: s-resize;}
+        .se-resize {cursor: se-resize;}
+        .sw-resize {cursor: sw-resize;}
+        .text {cursor: text;}
+        .url {cursor: url("https://cdn.frankerfacez.com/emoticon/128054/1"), auto;}
+        .w-resize {cursor: w-resize;}
+        .wait {cursor: wait;}
+        .zoom-in {cursor: zoom-in;}
+        .zoom-out {cursor: zoom-out;}
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p class=&quot;alias&quot;&gt;alias&lt;/p&gt;
+        &lt;p class=&quot;all-scroll&quot;&gt;all-scroll&lt;/p&gt;
+        &lt;p class=&quot;auto&quot;&gt;auto&lt;/p&gt;
+        &lt;p class=&quot;cell&quot;&gt;cell&lt;/p&gt;
+        &lt;p class=&quot;context-menu&quot;&gt;context-menu&lt;/p&gt;
+        &lt;p class=&quot;col-resize&quot;&gt;col-resize&lt;/p&gt;
+        &lt;p class=&quot;copy&quot;&gt;copy&lt;/p&gt;
+        &lt;p class=&quot;crosshair&quot;&gt;crosshair&lt;/p&gt;
+        &lt;p class=&quot;default&quot;&gt;default&lt;/p&gt;
+        &lt;p class=&quot;e-resize&quot;&gt;e-resize&lt;/p&gt;
+        &lt;p class=&quot;ew-resize&quot;&gt;ew-resize&lt;/p&gt;
+        &lt;p class=&quot;grab&quot;&gt;grab&lt;/p&gt;
+        &lt;p class=&quot;grabbing&quot;&gt;grabbing&lt;/p&gt;
+        &lt;p class=&quot;help&quot;&gt;help&lt;/p&gt;
+        &lt;p class=&quot;move&quot;&gt;move&lt;/p&gt;
+        &lt;p class=&quot;n-resize&quot;&gt;n-resize&lt;/p&gt;
+        &lt;p class=&quot;ne-resize&quot;&gt;ne-resize&lt;/p&gt;
+        &lt;p class=&quot;nesw-resize&quot;&gt;nesw-resize&lt;/p&gt;
+        &lt;p class=&quot;ns-resize&quot;&gt;ns-resize&lt;/p&gt;
+        &lt;p class=&quot;nw-resize&quot;&gt;nw-resize&lt;/p&gt;
+        &lt;p class=&quot;nwse-resize&quot;&gt;nwse-resize&lt;/p&gt;
+        &lt;p class=&quot;no-drop&quot;&gt;no-drop&lt;/p&gt;
+        &lt;p class=&quot;none&quot;&gt;none&lt;/p&gt;
+        &lt;p class=&quot;not-allowed&quot;&gt;not-allowed&lt;/p&gt;
+        &lt;p class=&quot;pointer&quot;&gt;pointer&lt;/p&gt;
+        &lt;p class=&quot;progress&quot;&gt;progress&lt;/p&gt;
+        &lt;p class=&quot;row-resize&quot;&gt;row-resize&lt;/p&gt;
+        &lt;p class=&quot;s-resize&quot;&gt;s-resize&lt;/p&gt;
+        &lt;p class=&quot;se-resize&quot;&gt;se-resize&lt;/p&gt;
+        &lt;p class=&quot;sw-resize&quot;&gt;sw-resize&lt;/p&gt;
+        &lt;p class=&quot;text&quot;&gt;text&lt;/p&gt;
+        &lt;p class=&quot;url&quot;&gt;url&lt;/p&gt;
+        &lt;p class=&quot;w-resize&quot;&gt;w-resize&lt;/p&gt;
+        &lt;p class=&quot;wait&quot;&gt;wait&lt;/p&gt;
+        &lt;p class=&quot;zoom-in&quot;&gt;zoom-in&lt;/p&gt;
+        &lt;p class=&quot;zoom-out&quot;&gt;zoom-out&lt;/p&gt;    
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

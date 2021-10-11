@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS JSON</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>JSON</h2>
+            <p>JavaScript Object Notation - format pro ukládání a posílání dat</p>
+            <p>Velice často používán např. pro posílání dat ze serveru na klienta</p>
+            <p>Syntax:</p>
+            <div class="code-sample" data-type="javascript">{
+"klic": "hodnota"            
+}</div>
+            <h2>Konvertování z JSON textu na JS Object</h2>
+            <div class="code-sample" data-type="javascript">let data = '{ "count": 2, "books": [ {"name": "Hewi Potah", "year": 1986 }, { "name": "Da Lod of Da Ringos", "year": 1946 } ]}';
+let convertedData = JSON.parse(data); // konvertuje z JSON textu na JS object</div>
+            <h2 class="">Editor</h2>
+            <p class="">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor" class="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="text"&gt;         
+    &lt;/p&gt;         
+    &lt;script&gt;
+    const text = document.getElementById('text');
+    let data = '{ "count": 2, "books": [ {"name": "Hewi Potah", "year": 1986 }, { "name": "Da Lod of Da Ringos", "year": 1946 } ]}';
+    let convertedData = JSON.parse(data); // konvertuje z JSON textu na JS object
+    text.innerHTML = `Počet knížek: ${convertedData.count}`;
+    convertedData["books"].forEach((book) => { text.innerHTML += `&lt;p&gt; Název: ${book.name}, rok: ${book.year} &lt;/p&gt;`});
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

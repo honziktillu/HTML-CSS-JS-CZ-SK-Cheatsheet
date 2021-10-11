@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>DOM - Document Object Model</h2>
+            <p>Po načtení stránky se vytvoří DOM strom, který obsahuje elementy z naší stránky</p>
+            <img src="../../res/img/dom.png" alt="dom.png">
+            <p>V tomto stromu je kořenem element html</p>
+            <p>Na tento kořen odkazují dvě větve - head a body</p>
+            <p>Následně se tyto části rozdělují podle jejich obsahu</p>
+            <p>Pomocí DOM můžeme několit hromadu věcí:</p>
+            <ul>
+                <li>Měnit elementy stránky a jejich atributy</li>
+                <li>Měnit CSS styly stránky</li>
+                <li>Odebírat elementy</li>
+                <li>Přidávat elementy</li>
+                <li>Zpracovávat různé události (eventy)</li>
+                <li>Vytvářet různé nové eventy</li>
+            </ul>
+            <p>PS: pro práci s DOM je dobré dávat JS úplně na konec dokumentu před uzavírající tag body :)</p>
+            <h2>DOM funkce</h2>
+            <ul>
+                <li>document.getElementById('naseId') - najde element s id="naseId"</li>
+                <li>document.getElementsByTagName('li') - najde všechny elementy li</li>
+                <li>document.getElementsByClassName('mojeTrida') - najde všechny elementy s class="mojeTrida"</li>
+                <li>element.innerHTML = "&lt;p&gt;ahoj&lt;/&gt;"; - mění vnitřní HTML elementu - v naší ukázce by se přidal do elementu odstavec</li>
+                <li>element.innerText = "&lt;p&gt;ahoj&lt;/&gt;"; - mění vnitřní text elementu - v naší ukázce by se přidal do elementu jenom text a tag p by šel vidět</li>
+                <li>element.attribute = hodnota; - pomocí této syntaxe lze měnit různé atributy na jinou hodnotu</li>
+                <li>element.style.vlastnost = hodnota; - pomocí této syntaxe lze měnit CSS pro element</li>
+                <li>document.createElement('div') - vytvoří div element</li>
+                <li>document.removeChild(element) - odebere element z dokumentu</li>
+                <li>document.appendChild(element) - přidá element do dokumentu</li>
+                <li>document.replaceChild(novy, stary) - nahradí element</li>
+                <li>document.write() - ruce pryč od této zrůdnosti - používejte innerHTML nebo ty funkce nad :)</li>
+            </ul>
+            <h2>DOM eventy</h2>
+            <ul>
+                <li>element.onclick = () => exp; - když se klikne na element, tak nastane nějaká funkce (ps: tyto eventy pište přímo do JS souboru, nepište to do HTML tagů nebo k vám příjdu na web a začnu dělat brikule <a href="https://www.twitch.tv/forsenpls1/clip/SmoothAbstruseMosquitoPanicVis?filter=clips&range=all&sort=time" target="_blank">:)</a> pss: to hodnocení tam zůstává)</li>
+                <li>window.onload = () => exp; - když se okno načtě, tak nastane nějaká funkce</li>
+                <li>element.onchange = () => exp; - když se změní obsah elementu, tak nastave nějaká funkce</li>
+                <li>element.onmouseover = () => exp; - když se na element najede myší, tak nastave nějaká funkce</li>
+                <li>element.onmouseout  = () => exp; - když se z elementu odjede myší, tak nastave nějaká funkce</li>
+                <li>element.onmousedown  = () => exp; - když se na elementu drží tlačítko myši, tak nastave nějaká funkce</li>
+                <li>element.onmouseup  = () => exp; - když se na elementu pustí tlačítko myši, tak nastave nějaká funkce</li>
+            </ul>
+            <h2>eventListener</h2>
+            <p>Pro přidání eventListeneru na element používáme funkci addEventListener()</p>
+            <p>Pro odebrání eventListeneru z elemente používáme funkci removeEventListener()</p>
+            <p>Syntax:</p>
+            <div class="code-sample" data-type="javascript">element.addEventListener(event, funkce)</div>
+            <h2 class="">Editor</h2>
+            <p class="">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor" class="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let array = ["Car", "Phone", "House"];
+        array.forEach((item) => console.log(item));
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

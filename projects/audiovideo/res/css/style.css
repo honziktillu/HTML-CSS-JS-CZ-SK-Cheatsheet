@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#videoPlayer {
+    display: block;
+    max-width: 720px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.video-button {
+    margin-top: 1em;
+    width: 70px;
+}
+
+#video-pause, #audio-pause {
+    display: none;
+}
+
+#audioPlayer {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5em;
+}
+
+

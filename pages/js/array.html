@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Array</h2>
+            <p>Array (pole) slouží pro ukládání několika hodnot do jedné proměnné</p>
+            <p>Syntax:</p>
+            <div class="code-sample" data-type="javascript">let array = [];</div>
+            <p>Pro získání položky z pole používáme []</p>
+            <p>Položky se počítají od čísla 0</p>
+            <div class="code-sample" data-type="javascript">let array = ["Car", "Phone", "House"];
+console.log(array[0]); // Car                
+console.log(array[1]); // Phone                
+console.log(array[2]); // House</div>
+            <p>Podobně lze i danou hodnotu přepsat:</p>
+            <div class="code-sample" data-type="javascript">let array = ["Car", "Phone", "House"];
+array[0] = "Bike";
+console.log(array[0]); // Bike</div>  
+            <p>Celkovou délku pole lze získat pomocí length</p>
+            <div class="code-sample" data-type="javascript">let array = ["Car", "Phone", "House"];
+console.log(array.length); // 3</div>  
+            <p>Celé pole můžeme vypsat tímto způsobem:</p>
+            <div class="code-sample" data-type="javascript">let array = ["Car", "Phone", "House"];
+console.log(array); // Car, Phone, House</div>  
+            <p>Funkce pro Array</p>
+            <ul>
+                <li>pop - odstraní poslední položku z pole a vrátí ji</li>
+                <li>push - přidá položku na konec pole</li>
+                <li>shift - odstraní první položku z pole a vrátí ji</li>
+                <li>unshift - přidá položku na začátek pole</li>
+                <li>splice - vkládá, odstraňuje a přepisuje položky</li>
+                <li>forEach - procyklí pole</li>
+            </ul>
+            <p>Pole může obsahovat v sobě další pole - vznikne vícerozměrné pole</p>
+            <p>Pole lze i procyklit</p>
+            <div class="code-sample" data-type="javascript">let array = ["Car", "Phone", "House"];
+for (let key of array) { // do proměnné key se pokaždé uloží položka, která je zrovna na řadě
+    console.log(key);
+}
+
+// nebo
+
+for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+}</div>
+            <p>... - spread operátor - pole je úzce se spread operátorem spojené, využívá se například pro kopírování pole</p>
+            <div class="code-sample" data-type="javascript">let arr = ["Car", "Phone"];
+let arr2 = ["House", "Drink"];
+let arr3 = [...arr, ...arr2];
+console.log(arr3); // Car, Phone, House, Drink</div>
+            <h2 class="">Editor</h2>
+            <p class="">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor" class="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        let array = ["Car", "Phone", "House"];
+        array.forEach((item) => console.log(item));
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

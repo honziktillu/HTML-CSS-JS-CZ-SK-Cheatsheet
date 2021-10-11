@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag meta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>&lt;meta&gt;</h2>
+            <p>Data, která poskytují informace o dalších datech</p>
+            <p>Vždycky obsaženo v &lt;head&gt;</p>
+            <h2>&lt;meta&gt; atributy</h2>
+            <ul>
+                <li>charset - specifikuje znakové enkódování HTML dokumentu - UTF-8</li>
+                <li>content - specifikuje hodnotu pro name atribut</li>
+                <li>http-equiv - poskytuje HTTP hlavičku - refresh, content-type, policy...</li>
+                <li>name - specifikuje metadata - author, description, generator, keywords, viewport...</li>
+            </ul>
+            <h2>Editor</h2>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta name=&quot;keywords&quot; content=&quot;Meta&quot;&gt;
+        &lt;meta name=&quot;author&quot; content=&quot;Jan Till&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p class=&quot;text-sample&quot;&gt;Ahoj světe&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

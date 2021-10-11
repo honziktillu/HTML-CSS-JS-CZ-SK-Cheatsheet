@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag svg</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>&lt;svg&gt;</h2>
+            <p>Slouží k vytvoření obalu pro SVG grafiku</p>
+            <p>SVG obsahuje elementy pro kresbu cest, kruhů, textů, obrázku...</p>
+            <p>&lt;svg&gt; atributy:</p>
+            <ul>
+                <li>width - šířka svg elementu</li>
+                <li>height - výška svg elementu</li>
+            </ul>
+            <p>&lt;svg&gt; elementy:</p>
+            <ul>
+                <li>&lt;rect&gt; - vykreslení obdelníku</li>
+                <li>&lt;circle&gt; - vykreslení kruhu</li>
+                <li>&lt;line&gt; - vykreslení čáry</li>
+                <li>...</li>
+            </ul>
+            <a href="https://editor.method.ac/" target="_blank">SVG editor - view - source</a>
+            <h2>Editor</h2>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;svg width=&quot;400&quot; height=&quot;110&quot;&gt;
+            &lt;rect width=&quot;300&quot; height=&quot;100&quot; style=&quot;fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;
+        &lt;/svg&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

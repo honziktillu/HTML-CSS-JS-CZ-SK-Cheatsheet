@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.imgWrapper {
+    position: relative;
+}
+
+.red {
+    position: absolute;
+    border: 2px solid red;
+}
+
+#button {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

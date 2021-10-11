@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS fonty</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Font</h2>
+            <p>Font - vzhled písma</p>
+            <p>Fonty dělíme na:</p>
+            <ul>
+                <li>serif - patkové písmo</li>
+                <li>sans-serif - bezpatkové písmo</li>
+                <li>monospace - všechno písmo má stejnou šířku</li>
+                <li>cursive - imituje lidský rukopis</li>
+                <li>fantasy - dekorativní písmo</li>
+            </ul>
+            <p>Font vlastnosti:</p>
+            <ul>
+                <li>font-family - nastavuje rodinu písma</li>
+                <li>font-style - lze přenastavit z hodnoty "normal" na hodnotu "italic" - text bude v kurzívě</li>
+                <li>font-weight - tloušťka fontu - např. hodnoty normal/bold či nastavení přes čísla 300/400/500/600...</li>
+                <li>font-size - velikost fontu - v px/em/%/vw</li>
+            </ul>
+            <p>Většinou se nějaká rodina fontu přímo importuje do našeho webu. Seznam zdarma fontů můžeme najít například na: <a href="https://fonts.google.com/" target="_blank">Google Fonts</a></p>
+            <p>Zde stačí vybrat písmo a následně ho importovat do našeho webu.</p>
+            <img src="../../res/img/googlefonts.png" alt="googlefonts.png">
+            <h2>line-height</h2>
+            <p>Vlastnost line-height specifikuje výšku řádku</p>
+            <p>line-height hodnoty:</p>
+            <ul>
+                <li>length - fixní výška v px, pt, cm...</li>
+                <li>% - procentuální výška podle velikost vlastnosti font-size</li>
+                <li>inherit - dědí z rodiče</li>
+            </ul>
+            <h2>text-align</h2>
+            <p>Vlastnost text-align specifikuje horizontální zarovnání textu</p>
+            <p>text-align hodnoty:</p>
+            <ul>
+                <li>left - zarovnání na levou stranu</li>
+                <li>right - zarovnání na pravou stranu</li>
+                <li>center - zarovnání na střed</li>
+                <li>justify - zarovnání řádků, tak aby každý řádek měl stejnou šířku - jako např. v novinách</li>
+                <li>inherit - zdědí vlastnost text-align od rodiče</li>
+                <li>initial - nastaví text-align na defaultní hodnotu</li>
+            </ul>
+            <h2>text-decoration</h2>
+            <p>Vlastnost text-decoration specifikuje dekoraci pro text</p>
+            <p>Zároveň je zkratkou pro vlastnosti text-decoration-line, text-decoration-color a text-decoration-style</p>
+            <p>text-decoration-line hodnoty:</p>
+            <ul>
+                <li>none - defaultní hodnota - specifikuje, že text nebude mít žadnou pomocnou čáru</li>
+                <li>underline - podtrhne text</li>
+                <li>overline - vytvoří čáru nad textem</li>
+                <li>line-through - přeškrtne text</li>
+            </ul>
+            <p>text-decoration-color nastavuje barvu pomocných čar</p>
+            <p>text-decoration-style hodnoty:</p>
+            <ul>
+                <li>solid - jedna čára</li>
+                <li>double - dvě čáry</li>
+                <li>dotted - podtržení bude tečkované</li>
+                <li>dashed - podtržení bude čárkované</li>
+                <li>wavy - podtržení bude vlnkované</li>
+            </ul>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot;&gt;
+        &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;style&gt;
+            div {
+                max-width: 980px;
+                width: 100%;
+                height: 50px;
+                background-color: rgba(255, 120, 6, 0.4);
+                border: 5px solid rgb(123, 32, 21);
+            }
+            p {
+                font-family: 'Roboto', sans-serif;
+                line-height: 32px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;p&gt;Ahoj svete&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

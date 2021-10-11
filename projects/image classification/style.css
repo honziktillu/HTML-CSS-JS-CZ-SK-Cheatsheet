@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#button {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid-View</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Grid-View</h2>
+            <p>Velký počet webových stránek je tvořen pomocí takzvaného Grid-View - rozložení stránky (layout) je rozděleno do několika sloupců (column)</p>
+            <img src="../../res/img/layout.png" alt="layout.png">
+            <p>Grid-View má často těchto sloupců 12 a jejich celková šířka je rovna 100% šířce okna prohlížeče</p>
+            <h2>Způsob využití:</h2>
+            <p>Naše stránka bude mít nějakou sekci. Tuto sekci budeme registrovat jako řádek (row). V každém řádku jsou sloupce (column). Tyto sloupce musí v 12ti sloupcovém Grid-View dávat dohromady 100% šířky stránky.</p>
+            <p>Příklad: Budeme mít řádek ve kterém budou sloupce s označením col-2 a col-10. Col-2 a col-10 dávají dohromady 100% šířky stránky (2+10 = 12, 12 je 100% šířka)</p>
+            <h2>Media Queries</h2>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            * {
+                box-sizing: border-box;
+            }
+          
+            .header {
+                background-color: #9933cc;
+                color: #ffffff;
+                padding: 15px;
+              }
+              
+            .menu ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+              
+            .menu li {
+                padding: 8px;
+                margin-bottom: 7px;
+                background-color: #33b5e5;
+                color: #ffffff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+              
+            .menu li:hover {
+                background-color: #0099cc;
+            }
+              
+            .aside {
+                background-color: #33b5e5;
+                padding: 15px;
+                color: #ffffff;
+                text-align: center;
+                font-size: 14px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+              
+            .footer {
+                background-color: #0099cc;
+                color: #ffffff;
+                text-align: center;
+                font-size: 12px;
+                padding: 15px;
+            }
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+          
+            [class*="col-"] {
+                float: left;
+                padding: 15px;
+                width: 100%;
+            }
+
+            @media only screen and (min-width: 768px) {
+                .col-1 {width: 8.33%;}
+                .col-2 {width: 16.66%;}
+                .col-3 {width: 25%;}
+                .col-4 {width: 33.33%;}
+                .col-5 {width: 41.66%;}
+                .col-6 {width: 50%;}
+                .col-7 {width: 58.33%;}
+                .col-8 {width: 66.66%;}
+                .col-9 {width: 75%;}
+                .col-10 {width: 83.33%;}
+                .col-11 {width: 91.66%;}
+                .col-12 {width: 100%;}
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;header&quot;&gt;
+            &lt;h1&gt;Chania&lt;/h1&gt;
+        &lt;/div&gt;
+    
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-3 menu&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;The Flight&lt;/li&gt;
+                &lt;li&gt;The City&lt;/li&gt;
+                &lt;li&gt;The Island&lt;/li&gt;
+                &lt;li&gt;The Food&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+        
+            &lt;div class=&quot;col-6&quot;&gt;
+            &lt;h1&gt;The City&lt;/h1&gt;
+            &lt;p&gt;Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.&lt;/p&gt;
+            &lt;/div&gt;
+        
+            &lt;div class=&quot;col-3 right&quot;&gt;
+            &lt;div class=&quot;aside&quot;&gt;
+                &lt;h2&gt;What?&lt;/h2&gt;
+                &lt;p&gt;Chania is a city on the island of Crete.&lt;/p&gt;
+                &lt;h2&gt;Where?&lt;/h2&gt;
+                &lt;p&gt;Crete is a Greek island in the Mediterranean Sea.&lt;/p&gt;
+                &lt;h2&gt;How?&lt;/h2&gt;
+                &lt;p&gt;You can reach Chania airport from all over Europe.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class=&quot;footer&quot;&gt;
+            &lt;p&gt;Tato uk&aacute;zka je ze str&aacute;nky &lt;a href=&quot;https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mobilefirst&quot; target=&quot;_blank&quot;&gt;w3schools.com&lt;/a&gt;. Určitě stojí za omrknut&iacute; :)&lt;/p&gt;
+        &lt;/div&gt;
+  
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

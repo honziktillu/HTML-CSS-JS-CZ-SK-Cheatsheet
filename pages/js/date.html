@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS date</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Date</h2>
+            <p>Date slouží pro práci s datem a časem</p>
+            <h2>Způsoby vytvoření:</h2>
+            <div class="code-sample" data-type="javascript">new Date();
+new Date(rok, mesic, den, hodiny, minuty, sekundy, milisekundy);                
+new Date(milisekundy);                
+new Date(retezec);</div>
+            <h2>new Date(rok, mesic, den, ...)</h2>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">new Date(2020, 11, 25, 20, 30, 30, 0);</div>
+            <p>V JavaScriptu jsou měsíce počítány od 0 (0 - leden, 11 - prosinec)</p>
+            <p>Tento syntax se nemusí psát celý - stačí např. vyplnit jen rok, mesic a den :)</p>
+            <h2>Řetězec</h2>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">new Date("October 25, 2000 20:00:00");</div>
+            <p>Funkce pro Date:</p>
+            <ul>
+                <li>toUTCString(); - převede Date do UTC formátu</li>
+                <li>toDateString(); - převede Date do lepší čitelnosti</li>
+                <li>toISOString(); - převede Date do ISO formátu</li>
+                <li>getFullYear(); - vrací čtyř místné číslo pro rok - yyyy</li>
+                <li>getMonth(); - vrací číslo pro měsíc - v rozmezí 0 - 11</li>
+                <li>getDate(); - vrací číslo pro den v měsíci - v rozmezí 1 - 31</li>
+                <li>getDay(); - vrací číslo pro den v týdnu - v rozmezí 0 - 6</li>
+                <li>getHours(); - vrací hodiny - v rozmezí 0 - 23</li>
+                <li>getMinutes(); - vrací minuty - v rozmezí 0 - 59</li>
+                <li>getSeconds(); - vrací sekundy - v rozmezí 0 - 59</li>
+                <li>getMilliseconds(); - vrací milisekundy - v rozmezí 0 - 999</li>
+                <li>getTime(); - vrací milisekundy od 1. ledna, 1970 UTC</li>
+                <li>Date.now() - vrací milisekundy od 1. ledna, 1970 UTC</li>
+                <li>setDate() - nastaví den - v rozmezí 1 - 31</li>
+                <li>setFullYear() - nastaví rok</li>
+                <li>setHours() - nastaví hodiny - v rozmezí 0 - 23</li>
+                <li>setMilliseconds() - nastaví milisekundy - v rozmezí 0 - 999</li>
+                <li>setMinutes() - nastaví minuty - v rozmezí 0 - 59</li>
+                <li>setMonth() - nastaví měsíc - v rozmezí 0 - 11</li>
+                <li>setSeconds() - nastaví sekundy - v rozmezí 0 - 59</li>
+                <li>setTime() - nastaví čas (počet milisekund co uběhlo od 1. ledna, 1970 UTC)</li>
+            </ul>
+            <h2 class="">Editor</h2>
+            <p class="">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor" class="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="text"&gt;         
+    &lt;/p&gt;         
+    &lt;script&gt;
+        let d = new Date();
+        document.getElementById("text").innerHTML = d.getDate();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

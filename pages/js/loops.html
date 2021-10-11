@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS for, while, do while</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>Cykly (Loops)</h2>
+            <p>Cykly se používají pro opakování nějaké akce - např. když chceme vypsat čísla od 1 do 10</p>
+            <h2>while</h2>
+            <p>Cyklus while má následující syntax:</p>
+            <div class="code-sample" data-type="javascript">while (podmínka) {
+    // kód
+}</div>
+            <p>Pokud je podmínka pravdivá (true), tak se cyklus while bude provádět</p>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">let i = 0;
+while (i < 3) {
+    console.log(i); // vyloguje 0, 1, 2
+i++;
+}</div>
+            <p>Náš cyklus v tomto případě bude obsahovat tři cykly</p>
+            <h2>do while</h2>
+            <p>V cyklu do while se náš kód provede minimálně jednou bez ohledu na podmínku</p>
+            <p>Syntax:</p>
+            <div class="code-sample" data-type="javascript">let a = 0;
+do {
+    console.log(a); // vyloguje 0 i přes to že podmínka ve while neplatí
+    a++;
+} while (a < -3);</div>
+            <h2>for</h2>
+            <p>Cyklus for je o trochu složitější, ale zároveň je i v kódech běžnější</p>
+            <p>Syntax:</p>
+            <div class="code-sample" data-type="javascript">for(začátek; podmínka; krok) {
+    // kód
+}</div>
+            <p>Příklad:</p>
+            <div class="code-sample" data-type="javascript">for(let i = 0; i < 3; i++) {
+    console.log(i);
+}</div>
+            <ul>
+                <li>začátek - let i = 0; - na začátku cyklu se vytvoří proměnná i s hodnotou 0</li>
+                <li>podmínka - i < 3; - kontroluje se každý cyklus jestli i je menší jak 3 - pokud není, tak se cyklus zastaví</li>
+                <li>tělo - console.log(i); - každý cyklus se provede console.log proměnné i</li>
+                <li>krok - i++ - spustí se po každém cyklu - v našem případě se spustí po console.log(i);</li>
+            </ul>
+            <h2>break a continue</h2>
+            <p>Pokud chceme náš cyklus zastavit, tak můžeme využít slovíčka break</p>
+            <p>Pokud chceme pokračovat v následujícím cyklu, tak můžeme využít slovíčka continue</p>
+            <div class="code-sample" data-type="javascript">for(let i = 0; i < 5; i++) {
+    if (i == 0) continue;
+    if (i == 3) break;
+    console.log(i);            
+}</div>
+            <h2>Labely</h2>
+            <p>Někdy je třeba potřeba se z několika vnořených cyklů dostat. K tomu slouží labely.</p>
+            <p>Každému cyklu můžeme dát označení a následně na toto označení můžeme odkazovat</p>
+            <p>Například:</p>
+            <div class="code-sample" data-type="javascript">prvniFor: for(let i = 0; i < 5; i++) {
+    for(let a = 0; a < 10; a++) {
+        if (a === 5) break prvniFor;
+        console.log(a);
+    }
+}</div>
+            <h2 class="">Editor</h2>
+            <p class="">Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor" class="">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+    prvniFor: for(let i = 0; i < 5; i++) {
+        for(let a = 0; a < 10; a++) {
+            if (a === 5) break prvniFor;
+            console.log(a);
+        }
+    }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

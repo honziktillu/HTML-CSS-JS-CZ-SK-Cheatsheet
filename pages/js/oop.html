@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS OOP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>OOP</h2>
+            <p>Objektově Orientované Programování - stručně řečeno:</p>
+            <p>Díky OOP můžeme vytvářet objekty, které mohou např. reprezentovat reálné věci - auto, klíče, mobil...</p>
+            <p>Postup: Vytvoření třídy (třída je něco jako šablona pro náš objekt) - vytvoření instance/objektu od této třídy</p>
+            <h2>Vytvoření třídy</h2>
+            <p>Syntax:</p>
+            <div class="code-sample" data-type="javascript">class nazevTridy { 
+    //kod 
+}</div>
+            <br>
+            <h2>constructor</h2>
+            <p>constructor je funkce, která se volá při vytvoření objektu</p>
+            <div class="code-sample" data-type="javascript">class Woman { 
+    constructor() {
+        console.log("Objekt vytvořen");
+    }
+}
+let woman = new Woman(); // Woman() odkazuje na constructor()</div>
+            <h2>Funkce</h2>
+            <p>Každý objekt může mít svoje funkce - syntax: nazevFunkce() { // kod }</p>
+            <div class="code-sample" data-type="javascript">class Woman { 
+    constructor() {
+        console.log("Objekt vytvořen");
+    }
+
+    cook() {
+        console.log("Jdu vařit");
+    }
+
+    shout(name) {
+        console.log("Přestaň koukat na tu televizi " + name);
+    }
+
+}
+let woman = new Woman(); // Woman() odkazuje na constructor()
+woman.cook(); // Jdu vařit
+woman.shout("Honzo"); // Přestaň koukat na tu televizi Honzo</div> 
+            <h2>static</h2> 
+            <p>Když je před něčím slovo static, tak náleží daná věc třídě -> pokud má např. funkce před názvem static, tak můžeme funkci zavolat ve stylu: NázevTřídy.statickáFunkce();</p>      
+            <div class="code-sample" data-type="javascript">class Woman { 
+    constructor() {
+        console.log("Objekt vytvořen");
+    }
+            
+    cook() {
+        console.log("Jdu vařit");
+    }
+            
+    shout(name) {
+        console.log("Přestaň koukat na tu televizi " + name);
+    }
+
+    static staticFunction() {
+        console.log("Statická funkce")
+    }
+            
+}
+Woman.staticFunction(); // Statická funkce - rovnou ji voláme přes třídu - nemusíme vytvářet objekt, jelikož je statická</div> 
+            <h2>Vlastnosti</h2>
+            <p>Každý objekt může mít různé vlastnosti např. jméno, věk...</p>
+            <p>Pro nastavování vlastností našeho objektu používáme syntax: this.vlastnost = hodnota;</p> 
+            <p>Slovo this odkazuje na náš objekt uvnitř třídy</p> 
+            <div class="code-sample" data-type="javascript">class Woman { 
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    printNameAndAge() {
+        console.log(`${this.name}: ${this.age}`);
+    }
+                        
+}
+let woman = new Woman("Radka", 20);
+woman.printNameAndAge();</div>   
+            <h2>extends</h2>
+            <p>Třídy mohou z jiných tříd dědit. K dědění slouží slovíčko extends - syntax: nazevTridy extends nazevJineTridy { // kód }</p> 
+            <div class="code-sample" data-type="javascript">class Human {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }            
+
+    humanFunction() {
+        console.log("Human function");
+    }
+}
+
+class Woman extends Human { 
+    constructor(name, age) {
+        super(name, age); // super odkazuje na rodičovskou třídu - Human, v našem případě odkazujeme na constructor ze třídy Human
+    }
+            
+    printNameAndAge() {
+        console.log(`${this.name}: ${this.age}`);
+    }
+                                    
+}
+let woman = new Woman("Radka", 20);
+woman.printNameAndAge();
+woman.humanFunction(); // na humanFunction() lze zavolat jelikož dědíme třídu Human</div> 
+            <h2>Example</h2>
+            <div id="editor" class="">
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;script&gt;
+                    class Human {
+                        constructor(name, age) {
+                            this.name = name;
+                            this.age = age;
+                        }            
+                    
+                        humanFunction() {
+                            console.log("Human function");
+                        }
+                    }
+                    
+                    class Woman extends Human { 
+                        constructor(name, age) {
+                            super(name, age); // super odkazuje na rodičovskou třídu - Human, v našem případě odkazujeme na constructor ze třídy Human
+                        }
+                                
+                        printNameAndAge() {
+                            console.log(`${this.name}: ${this.age}`);
+                        }
+                                                        
+                    }
+                    let woman = new Woman("Radka", 20);
+                    woman.printNameAndAge();
+                    woman.humanFunction(); // na humanFunction() lze zavolat jelikož dědíme třídu Human
+                    &lt;/script&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;</div>
+            <h2 class="">Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <p>PS: Logy se zobrazují v konzoli - F12 - console</p>
+            <iframe id="code" class=""></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

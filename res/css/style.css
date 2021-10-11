@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section {
+    padding: 1em;
+}
+
+.content {
+    width: 100%;
+}
+
+h1 {
+    font-size: 28px;
+    color: black;
+    text-align: center;
+    margin-bottom: 1em;
+    text-decoration: underline;
+    transition: .2s color ease;
+}
+
+h1:hover {
+    color: grey;
+}
+
+h2 {
+    font-size: 21px;
+}
+
+#editor, .code-sample { 
+    display: block;
+    overflow: auto;
+    height: 320px;
+    width: 100%;
+}
+
+#play {
+    margin-left: 1em;
+}
+
+iframe {
+    display: block;
+    overflow: auto;
+    min-height: 1080px;
+    width: 100%;
+    border: 3px solid gray;
+    resize: both;
+}
+
+.grid-table {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.grid-table > span {
+    padding: 1em;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.grid-table > span:nth-child(3n + 1) {
+    border-color: red;
+}
+
+.grid-table > span:nth-child(3n + 1)::before {
+    content: "Selektor: ";
+    font-weight: bold;
+}
+
+.grid-table > span:nth-child(3n + 2) {
+    border-color: green;
+}
+
+.grid-table > span:nth-child(3n + 2)::before {
+    content: "Ukázka: ";
+    font-weight: bold;
+}
+
+.grid-table > span:nth-child(3n + 3) {
+    border-color: blue;
+    border-bottom: 3px solid blue;
+    margin-bottom: 1em;
+}
+
+.grid-table > span:nth-child(3n + 3)::before {
+    content: "Popis: ";
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* 
+CSS Samples
+*/
+.text-sample {
+    color: red;
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+    .grid-table {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-table > span:nth-child(3n + 3) {
+        border-bottom: 1px solid blue;
+        margin-bottom: 0;
+    }
+}

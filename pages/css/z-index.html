@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS z-index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>z-index</h2>
+            <p>Vlastnost z-index specifikuje pořadí ve kterém se elementy vyrenderují na sobě</p>
+            <p>Tato vlastnost funguje jen pro elementy s nastavenou vlastností display na hodnoty absolute, relative, fixed, sticky</p>
+            <h2>Editor</h2>
+            <p>Pro živou ukázku je CSS a JavaScript vepsaný přímo v dokumentu - v praxi tyto soubory vždy oddělujte do externích souborů</p>
+            <div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            body {
+                height: 200vh;
+            }
+            div {
+                color: white;
+                position: relative;
+            }
+            .div1 {
+                width: 200px;
+                height: 200px;
+                background: black;
+                z-index: 1;
+            }
+            .div2 {
+                width: 300px;
+                height: 200px;
+                background: red;
+                z-index: 2;
+                top: -50px;
+                left: 100px;
+                margin-bottom: 5em;
+            }
+            .div3 {
+                width: 200px;
+                height: 200px;
+                left: 100px;
+                background: green;
+                z-index: 4;
+            }
+            .div4 {
+                width: 300px;
+                height: 200px;
+                background: blue;
+                z-index: 3;
+                top: -50px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;div1&quot;&gt;
+            z-index 1
+        &lt;/div&gt;
+        &lt;div class=&quot;div2&quot;&gt;
+                z-index 2
+            &lt;/div&gt;
+        &lt;div class=&quot;div3&quot;&gt;
+            z-index 4
+        &lt;/div&gt;
+        &lt;div class=&quot;div4&quot;&gt;
+                z-index 3
+            &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

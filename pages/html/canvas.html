@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag canvas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="../../res/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../../res/img/icon.png" rel="icon">
+</head>
+<body>
+    <a href="../../index.html">
+        <h1>TWS/WAP Cheatsheet</h1>
+    </a>
+    <main>
+        <section class="content">
+            <h2>&lt;canvas&gt;</h2>
+            <p>Slouží pro vytvoření grafického plátna</p>
+            <p>Na toto plátno se maluje pomocí různých scriptů</p>
+            <h2>Editor</h2>
+            <div id="editor">
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang=&quot;en&quot;&gt;
+                &lt;head&gt;
+                    &lt;meta charset=&quot;UTF-8&quot;&gt;
+                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                    &lt;title&gt;Document&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;
+                    &lt;script&gt;
+                        /**
+                         * Bezny postup pro praci s canvas elementem 
+                         * 1. Propojime si HTML element s JavaScriptem
+                         * 2. Ziskame si pro canvas graficky kontext
+                         * 3. Nastavime sirku a vysku canvasu / vytvorime funkci, ktera se nam o to bude starat
+                         * 4. Pres graficky kontext zacneme vykreslovani
+                         * 5. Kresleni zacina naplnenim barvou. Styl naplneni se deli na fill (barva obsahu tvaru) a stroke (barva obvodu tvaru)
+                         * 6. Nasleduje funkce pro vykresleni
+                         */
+                
+                        // odkazujeme na canvas v HTML
+                        const canvas = document.getElementById('canvas');
+                
+                        // ziskavame graficky kontext z naseho platna (interface, ktery poskytuje 2d renderovani v canvas elementu - soucasti Canvas API)
+                        const ctx = canvas.getContext('2d');
+                
+                        // vlastnosti width - sirka, height - vyska | vraceji sirku a vysku naseho canvasu | v nasem pripade prenastavujeme sirku a vysku canvasu na sirku a vysku okna
+                        canvas.width = window.innerWidth;
+                        canvas.height = 1080;
+                        //canvas.height = window.innerHeight;
+                        
+                        // vlastnost fillStyle - barva obsahu | nekolik zpusobu zapisu - slovne, hex, rgb...
+                        ctx.fillStyle = 'green';
+                        ctx.fillStyle = '#FFAA00';
+                        ctx.fillStyle = &quot;rgb(252, 45, 36)&quot;;
+                        ctx.fillStyle = 'rgba(255, 165, 0, 1)';
+                
+                        // funkce fillRect() vykresli obsah obdelniku (souradniceX v px, souradniceY v px, sirka v px, vyska v px)
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        
+                        ctx.fillStyle = &quot;rgb(52, 245, 36)&quot;;
+                        ctx.fillRect(50, 50, 100, 100);
+                        
+                        // vlastnost strokeStyle - nastavi barvu okraje | zase stejne zpusoby zapisu barvy jako u fillStyle
+                        ctx.strokeStyle = &quot;black&quot;;
+                
+                        // funkce strokeRect() vykresli okraj obdelniku (souradniceX v px, souradniceY v px, sirka v px, vyska v px)
+                        ctx.strokeRect(200, 200, 100, 100);
+                        
+                        // funkce clearRect() vygumuje z platna danou oblast (souradniceX v px, souradniceY v px, sirka v px, vyska v px)
+                        ctx.clearRect(75, 75, 100, 100);
+                        
+                        ctx.fillStyle = &quot;black&quot;;
+                
+                        /**
+                         * Dalsi dulezitou soucasti jsou cesty - cesta je skupina bodu propojena nekolika carami.
+                         * Tyto cary mohou nabyvat ruznych tvaru ci krivek s ruznymi rozmery
+                         * Tyto cestou mohou byt uzavrene, ale i nemusi
+                         * 
+                         * Postup pro vytvoreni cesty:
+                         * 1. Zavolame funkci beginPath() - otevreme nasi cestu
+                         * 2. Provedeme vykreslovaci operace
+                         */
+                
+                
+                        /**
+                         * Pohyb stetcem
+                         */
+                
+                        // otevre cestu
+                        ctx.beginPath();
+                
+                        // posune stetec na souradnice x, y
+                        ctx.moveTo(200, 100);
+                
+                        // ze souradnic 200, 100 se udela cara stetcem az do souradnic 300, 175
+                        ctx.lineTo(300, 175);
+                
+                        // z 300, 175 se udela cara stetcem az do 300, 25
+                        ctx.lineTo(300, 25);
+                
+                        // z 200, 100 se udela cara az do 200, 100
+                        ctx.lineTo(200, 100);
+                
+                        // vymaluji se nase pohyby
+                        ctx.stroke();
+                
+                        /**
+                         * vykresleni kruhu
+                         */
+                        
+                        ctx.beginPath();
+                        ctx.arc(500, 100, 40, 0, Math.PI * 2, 0);
+                        ctx.stroke();
+                        
+                        /**
+                         * vykresleni kvadraticke krivky
+                         */
+                        
+                        ctx.beginPath();
+                        ctx.moveTo(600, 600);
+                        ctx.quadraticCurveTo(600, 800, 800, 600);
+                        ctx.stroke();
+                        
+                        ctx.fillStyle = &quot;rgba(0, 255, 0, 0.4)&quot;;
+                        ctx.fillRect(200, 600, 100, 100);
+                        
+                        ctx.fillStyle = &quot;rgba(0, 0, 255, 0.6)&quot;;
+                        ctx.fillRect(250, 650, 100, 100);
+                        
+                        ctx.strokeStyle = &quot;black&quot;;
+                        // zmena tloustky cary
+                        ctx.lineWidth = 5;
+                        ctx.beginPath();
+                        ctx.moveTo(100, 400);
+                        ctx.lineTo(300, 400);
+                        ctx.stroke();
+                        
+                        ctx.strokeStyle = &quot;black&quot;;
+                        ctx.lineWidth = 50;
+                        // koncova cepicka vykreslenych car
+                        ctx.lineCap = &quot;round&quot;; // butt, round, square
+                        ctx.beginPath();
+                        ctx.moveTo(100, 500);
+                        ctx.lineTo(300, 500);
+                        ctx.stroke();
+                        
+                        /**
+                         * vytvoreni linearniho gradientu
+                         */
+                        let linGra = ctx.createLinearGradient(600, 400, 800, 400);
+                        linGra.addColorStop(0, 'red');
+                        linGra.addColorStop(1, 'green');
+                        
+                        ctx.fillStyle = linGra;
+                        ctx.fillRect(600, 400, 200, 200);
+                        
+                        /**
+                         * vypsani textu
+                         */
+                        ctx.font = &quot;92px serif&quot;;
+                        ctx.fillText('http://tillix.fun', 900, 900);
+                    &lt;/script&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;                
+            </div>
+            <h2>Page<button id="play" class="button is-light is-success">Run</button></h2>
+            <iframe id="code"></iframe>
+            <h2>Canvas</h2>
+            <img src="../../res/img/canvasdiagram.png">
+            <h2>Arc</h2>
+            <p>ctx.arc(500, 100, 40, 0, Math.PI * 2, 0);</p>
+            <p>ctx.arc(souradniceX, souradniceY, radius, pocateni uhel v radianech - casto se pracuje s Math.PI, koncovy uhel v radianech, podminka jestli pujde arc proti smeru hodinovych rucicek - bud true nebo se nemusi vyplnovat);</p>
+            <img src="../../res/img/arcdiagram.png">
+            <h2>QC</h2>
+            <p>ctx.moveTo(20, 20); - (Bod A[0], Bod A[1])</p>
+            <p>ctx.quadraticCurveTo(20, 100, 200, 20); (Bod B[0], Bod B[1], Bod C[0], Bod C[1])</p>
+            <img src="../../res/img/qcdiagram.png">
+        </section>
+    </main>
+    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.js" crossorigin="anonymous"
+        integrity="sha256-Q9hnBpgBFstzZOr+OKFOWZWfcF5nFXO8Qz48Nmndo6U="></script>
+        <script src="../../res/js/editor.js"></script>
+</body>
+
+</html>

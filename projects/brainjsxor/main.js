@@ -24,6 +24,5 @@ net.train([
 ]);
 
 const netPic = document.getElementById('netPic');
-netPic.innerHTML = brain.utilities.toSVG(net);
 
 console.log(net.run([1, 0]));

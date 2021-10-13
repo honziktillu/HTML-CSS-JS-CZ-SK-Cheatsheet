@@ -14,9 +14,6 @@ const data = [
 // 0 - black, 1 - white
 net.train(data);
 
-const netPic = document.getElementById('netPic');
-netPic.innerHTML = brain.utilities.toSVG(net);
-
 console.log(net.run({r: 1, g: 0, b: 1}));
 
 let color;
